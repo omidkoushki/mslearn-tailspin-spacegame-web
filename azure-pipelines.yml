@@ -1,13 +1,25 @@
 pool: "Private Pool Deployment"
-steps:
-- bash: echo hello world and this is a sample Microsoft learning pipeline
-- bash: uname -r
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
+stages:
+  - stage: firstStage
+    displayName: 1stStageToWelcome
+    jobs:
+      - job: firstJob
+        displayName: This is first job
+        steps:
+          - bash: echo "Salam this is the first job in first task in first stage"
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                # Write your commands here
+                echo this is the current path 
+                ls -ali
+                echo <><><><><><><><><><><><><><><><><>
+          - script: pwd
+      - job: secondJob
+      - job: thirdJob
       
-      echo 'Hello Omid'
-      pwd 
-      ls -ali
+  - stage: secondStage
+    jobs:
+      - job: firstJobinSecondStage
+        displayName: displayNameSecondStageJob
