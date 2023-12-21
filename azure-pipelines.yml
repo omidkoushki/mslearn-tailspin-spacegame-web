@@ -14,7 +14,7 @@ stages:
                 # Write your commands here
                 echo this is the current path 
                 ls -ali
-                echo <><><><><><><><><><><><><><><><><>
+                echo "<><><><><><><><><><><><><><><><><>""
           - script: pwd
       - job: secondJob
       - job: thirdJob
