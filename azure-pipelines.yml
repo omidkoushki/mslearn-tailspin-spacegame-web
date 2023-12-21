@@ -2,24 +2,4 @@ pool: "Private Pool Deployment"
 stages:
   - stage: firstStage
     displayName: 1stStageToWelcome
-    jobs:
-      - job: firstJob
-        displayName: This is first job
-        steps:
-          - bash: echo "Salam this is the first job in first task in first stage"
-          - task: Bash@3
-            inputs:
-              targetType: 'inline'
-              script: |
-                # Write your commands here
-                echo this is the current path 
-                ls -ali
-                echo "<><><><><><><><><><><><><><><><><>""
-          - script: pwd
-      - job: secondJob
-      - job: thirdJob
-      
-  - stage: secondStage
-    jobs:
-      - job: firstJobinSecondStage
-        displayName: displayNameSecondStageJob
+   
